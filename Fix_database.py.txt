@@ -1,0 +1,14 @@
+ALTER TABLE users
+MODIFY COLUMN user_id MEDIUMINT UNSIGNED AUTO_INCREMENT,
+ADD PRIMARY KEY(user_id);
+
+ALTER TABLE users
+MODIFY COLUMN user_id MEDIUMINT(6) UNSIGNED AUTO_INCREMENT;
+
+<?php
+    session_start();
+    if(!isset($_SESSION['user_level']) or  ($_SESSION['user_level'] !=1)){
+        header("Location: login.page");
+        exit();
+    }
+?>

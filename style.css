@@ -1,0 +1,906 @@
+body {
+    font-family: Arial, sans-serif; /* Default font for body */
+    background-color: #0a1324; /* Background color */
+    margin: 0;             /* Remove default margin */
+    padding: 0;            /* Remove default padding */
+    width: 100%;           /* Set width to 100% of the viewport */
+    height: 100%;          /* Optional: for full-height layouts */
+    box-sizing: border-box; /* Include padding and borders in element width/height */
+}
+
+
+
+/* Headers */
+
+
+/* Main background panel */
+.panel {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background: url('Pictures/Warhammer.jpg') no-repeat center center;
+    background-size: cover; /* Scales the image to cover the panel */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers content in the middle of the panel */
+  }
+  
+  /* Left side content */
+  .panel-left {
+    text-align: center;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .panel-left h1,
+  .panel-left p {
+    margin: 10px 0;
+    color: white;
+  }
+  
+  /* Floating right-side panel */
+  .panel-right {
+    position: fixed; /* Fixes the panel to the right side of the screen */
+    top: 50%; /* Centers the panel vertically */
+    right: 20px; /* Space from the right edge */
+    transform: translateY(-50%); /* Adjusts for proper vertical centering */
+    width: 300px;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000; /* Ensures it appears above other content */
+  }
+  
+  /* Content inside the right panel */
+  .panel-right h1,
+  .panel-right p {
+    margin: 10px 0;
+    color: white;
+    text-align: center;
+  }
+  
+  /* For smaller screens, adjust the floating panel */
+  @media (max-width: 768px) {
+    .panel-right {
+      width: 90%; /* Reduce the width for smaller screens */
+      right: 5%; /* Adjust spacing */
+      top: 10%; /* Position it higher for better visibility */
+      transform: none; /* Remove centering for smaller screens */
+    }
+  }
+
+
+
+/* IMAGE SETTINGS */
+
+
+
+.image-gallery {
+    position: relative;
+    max-width: 800px; /* Increased width */
+    margin: 0 auto; /* Center the gallery */
+    overflow: hidden;
+}
+
+.image-gallery img {
+    display: none; /* Hide all images by default */
+    width: 100%;
+    transition: opacity 0.5s ease-in-out; /* Smooth fading effect */
+}
+
+.image-gallery img.active {
+    display: block; /* Show the active image */
+    opacity: 1; /* Fully opaque for the active image */
+}
+
+.image-gallery img:not(.active) {
+    opacity: 0; /* Fully transparent for non-active images */
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent; /* No background */
+    color: white; /* Text color */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Light border for visibility */
+    padding: 5px 10px; /* Larger button size */
+    cursor: pointer;
+    z-index: 1; /* Ensure buttons are above the images */
+    border-radius: 5px; /* Rounded button corners */
+    transition: border-color 0.3s ease; /* Change border color on hover */
+}
+
+.left-button {
+    left: 20px;
+}
+
+.right-button {
+    right: 20px;
+}
+
+.nav-button:hover {
+    border-color: rgba(255, 255, 255, 1); /* Change border color on hover */
+    color: rgba(255, 255, 255, 1); /* Maintain text color on hover */
+}
+
+
+
+
+/* Headers_ADMINS */
+
+
+
+
+
+
+.panel-admins {
+    width: 100%;
+    height: 100vh; /* Make the panel cover the full viewport height */
+    padding: 20px;
+    text-align: center;
+    background: url('Picpanel/Warhammer2.jpg') no-repeat center center;
+    background-size: cover; /* Ensures the image scales proportionally to fill the panel */
+    border-radius: 0; /* No rounded corners since it's full screen */
+    color: white;
+    box-shadow: none; /* Optional: No shadow for a fullscreen effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .panel-admins h1,
+  .panel-admins p {
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+
+
+
+
+
+
+/* Headers_MEMBERS */
+
+
+
+
+
+
+
+.panel-members {
+    width: 100%;
+    height: 100vh; /* Make the panel cover the full viewport height */
+    padding: 20px;
+    text-align: center;
+    background: url('Picpanel/Warhammer4.jpg') no-repeat center center;
+    background-size: cover; /* Ensures the image scales proportionally to fill the panel */
+    border-radius: 0; /* No rounded corners since it's full screen */
+    color: white;
+    box-shadow: none; /* Optional: No shadow for a fullscreen effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .panel-members h1,
+  .panel-members p {
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+@media only screen and (max-width: 768px) {
+    body {
+        width: 80%; /* Adjust width for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        width: 100%; /* Full width on mobile */
+    }
+}
+
+.container {
+    width: 100%;            /* Ensure container spans the full width */
+    max-width: 100%;        /* Prevent exceeding 100% */
+    margin: 0 auto;         /* Center the container (if needed for flex layouts) */
+    padding: 0;             /* Remove extra padding */
+}
+
+
+hr {
+    border: none; /* Remove the default border */
+    height: 4px; /* Set the thickness of the line */
+    background-color: #FFFFFF; /* Set the color of the line */
+    margin: 20px 0; /* Space above and below the line */
+}
+
+h1 {
+    color: #FFF5EE;
+}
+h2 {
+    color: #FFF5EE;
+}
+h2.header {
+    color: #FFF5EE;
+}
+h3 {
+    text-align: center; /* Center heading */
+    color: #333; /* Darker text color */
+}
+h4 {
+    color: #FFF5EE; /* Text color */
+    font-size: 10px; /* Default font size */
+    margin: 10px 0; /* Space around the heading */
+}
+
+/* INFO_COL */
+.information {
+    max-width: 1200px; /* Centers content with a reasonable width */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.program {
+    display: flex; /* Makes each section a flex container */
+    align-items: flex-start; /* Aligns items at the top */
+    gap: 20px; /* Adds space between image and text */
+    margin-bottom: 40px; /* Adds spacing between sections */
+}
+
+.program-image {
+    max-width: 40%; /* Limits image width to 40% of the container */
+    border-radius: 10px; /* Rounds image corners */
+}
+
+.program-content {
+    flex: 1; /* Allows text to take up the remaining space */
+}
+
+.custom-title {
+    font-size: 24px; /* Sets a clear title size */
+    margin-bottom: 10px;
+}
+
+.custom-text {
+    font-size: 16px; /* Consistent text size for readability */
+    line-height: 1.6; /* Adds spacing between lines */
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* NAVIGATION */
+#nav {
+    display: flex; /* Use flexbox to arrange the items */
+    justify-content: space-between; /* Space between the left and right sections */
+    background-color: #FFF5EE; /* Background for nav */
+    padding: 10px 20px; /* Padding for the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: fixed; /* Make the nav stay at the top */
+    top: 0; /* Stick to the top of the viewport */
+    width: 100%; /* Ensure the nav spans the full width */
+    z-index: 1000; /* Ensure it stays above other content */
+    border-radius: 0; /* Remove rounded corners */
+}
+
+#nav ul {
+    display: inline-block; /* Ensure the list remains inline */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    list-style: none; /* Remove bullet points */
+}
+
+#nav ul li {
+    display: inline; /* Ensure inline items */
+    margin-right: 10px; /* Spacing between links */
+    font-family: Bahnschrift, 'Arial', sans-serif; /* Same font for all items */
+    font-weight: semi-bold; /* Same font weight for all items */
+    color: #0a1324; /* Text color for all items */
+    padding: 7px 7px; /* Same padding for all items */
+    background-color: #FFF5EE; /* Background color for all items */
+    border-radius: 5px; /* Rounded corners for all items */
+    text-decoration: none; /* Remove underline from links */
+}
+
+#nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    font-family: Bahnschrift, 'Arial', sans-serif; /* Ensure same font for links */
+    font-weight: semi-bold; /* Same font weight for links */
+    color: #0a1324; /* Text color for links */
+    padding: 7px 7px; /* Padding inside links */
+    background-color: #FFF5EE; /* Background color for links */
+    border-radius: 5px; /* Rounded corners for links */
+}
+
+#nav ul li a:hover {
+    background-color: #203e64; /* Darker background on hover */
+    color: #FFF5EE; /* Light text color on hover */
+}
+
+#nav ul.right {
+    text-align: right; /* Align the navigation items to the right */
+}
+
+
+
+/* REGISTER_VIEW_USERS */
+
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white; /* Set table background to white */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    color: #0a1324; /* Change text color for better contrast */
+    font-family: Arial, sans-serif; /* Ensure consistent font */
+}
+
+th {
+    background-color: #2a2f3b; /* Keep the header background dark */
+    color: #FFF5EE; /* Light text for contrast */
+    text-transform: uppercase; /* Make header text uppercase */
+    letter-spacing: 1px; /* Slightly space letters for better readability */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+tr:hover {
+    background-color: #3a4754; /* Keep hover effect for rows */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Action Links Styling */
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: #5999bf; /* Blue color for links */
+    margin-right: 15px; /* Space between links */
+    font-weight: bold; /* Bold font style */
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+a:hover {
+    color: #45a049; /* Green color on hover */
+}
+
+/* Error Styling */
+.error {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Additional Design for Content */
+#content {
+    background-color: #FFF5EE; /* Light background for content */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin: 20px 0; /* Space around content */
+}
+
+#content h2 {
+    font-family: Bahnschrift, Arial, sans-serif;
+    color: #0a1324;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Overall Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a1324; /* Light background for body */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styling */
+#container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* REGISTER_PAGE */
+
+
+/* Center the entire body content */
+.centered-body {
+    font-family: Arial, sans-serif;
+    background-color: #0a1324; /* Dark background */
+    display: flex; /* Flexbox to center the content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full height */
+    margin: 0; /* Remove default margin */
+}
+
+/* Container for the form */
+.register-container {
+    background-color: #FFF5EE; /* Light background for the content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 20px; /* Padding around content */
+    width: 300px; /* Fixed width */
+}
+
+/* Form container */
+.form-container {
+    text-align: left; /* Left align text */
+}
+h2.regis {
+    color:black; /* Left align text */
+}
+/* Labels for inputs */
+.label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below labels */
+    color: #555; /* Gray color for labels */
+}
+
+/* Input styles */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below inputs */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Submit button styles */
+input[type="submit"] {
+    background-color: #5999bf; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px; /* Padding inside button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    width: 100%; /* Full width button */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for submit button */
+input[type="submit"]:hover {
+    background-color: #45a049; /* Green on hover */
+}
+
+/* Error messages */
+.error {
+    color: red; /* Red color for error messages */
+    text-align: center; /* Center error messages */
+}
+
+
+
+/* REGISTER THANKS */
+
+
+        /* Global Body Styling */
+        body.thankyou {
+            font-family: Bahnschrift, Arial, sans-serif;
+            background-color: #0a1324; /* Dark background */
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Full height */
+            display: flex; /* Flexbox for centering content */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Ensures content is stacked vertically */
+        }
+
+        /* Unique Container for Thank You Page */
+        #thankYouContent {
+            background-color: #FFF5EE; /* Light background for content */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 500px; /* Fixed width */
+            text-align: center; /* Center text inside the container */
+        }
+
+        /* Unique Heading Style for Thank You Page */
+        #thankYouContent h2 {
+            font-size: 28px;
+            color: #0a1324;
+            margin-bottom: 20px;
+        }
+
+        /* Unique Paragraph Styling for Thank You Page */
+        #thankYouContent p {
+            font-size: 18px;
+            color: #555;
+            margin-top: 15px;
+        }
+
+        /* Unique Button Styling for Thank You Page */
+        .thankYouBtn {
+            display: inline-block;
+            background-color: #5999bf; /* Button color */
+            color: white; /* White text */
+            text-decoration: none;
+            padding: 15px 5px;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Added transition for text color */
+            margin-top: 20px;
+            text-align: center;
+            width: 100%; /* Full-width button */
+        }
+
+        .thankYouBtn:hover {
+            background-color: #45a049; /* Darker green on hover */
+            color: white; /* Keep the text white on hover */
+        }
+
+        /* Unique Table Styling (Shared between pages) */
+        .uniqueTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+        }
+
+        .uniqueTable th, .uniqueTable td {
+            padding: 12px;
+            text-align: left;
+            color: #0a1324; /* Text color */
+            font-family: Arial, sans-serif;
+        }
+
+        .uniqueTable th {
+            background-color: #2a2f3b; /* Dark header background */
+            color: #FFF5EE;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .uniqueTable tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .uniqueTable tr:hover {
+            background-color: #3a4754;
+            cursor: pointer;
+        }
+
+        .uniqueLinks a {
+            text-decoration: none;
+            color: #5999bf; /* Blue link color */
+            margin-right: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .uniqueLinks a:hover {
+            color: #45a049; /* Green on hover */
+        }
+
+        /* Unique Error Styling */
+        .errorMessage {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+
+
+
+        /* DELETE_USERS */
+
+        body.delete {
+            font-family: Bahnschrift, Arial, sans-serif;
+            background-color: #0a1324;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Unique Container Styling for Delete Page */
+        #deleteUserContent {
+            background-color: #FFF5EE;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+
+        /* Heading Style */
+        #deleteUserContent h2 {
+            font-size: 28px;
+            color: #0a1324;
+            margin-bottom: 20px;
+        }
+
+        /* Subheading Style */
+        #deleteUserContent h3 {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Button Styling */
+        .deleteUserBtn {
+            display: inline-block;
+            background-color: #5999bf; /* Button color */
+            color: white; /* White text */
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            text-align: center;
+            border: none; /* Remove border */
+            outline: none; /* Remove outline */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+        
+        .deleteUserBtn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        /* Error and Success Messages */
+        .deleteUserError {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .deleteUserSuccess {
+            color: #32CD32;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+    
+
+
+        /* EDIT_USER */
+
+
+        body.edit {
+            font-family: Bahnschrift, Arial, sans-serif;
+            background-color: #0a1324;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Unique Container Styling for Edit Page */
+        #editUserContent {
+            background-color: #FFF5EE;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+
+        /* Heading Style */
+        #editUserContent h2 {
+            font-size: 28px;
+            color: #0a1324;
+            margin-bottom: 20px;
+        }
+
+        /* Subheading Style */
+        #editUserContent label {
+            font-size: 18px;
+            color: #555;
+            display: block;
+            margin: 15px 0 5px;
+        }
+
+        /* Input Field Styling */
+        #editUserContent input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Button Styling */
+        .editUserBtn {
+            display: inline-block;
+            background-color: #5999bf;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            text-align: center;
+            border: none; /* Remove border */
+            outline: none; /* Remove outline */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .editUserBtn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        /* Error and Success Messages */
+        .editUserError {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .editUserSuccess {
+            color: #32CD32;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+
+/* SEARCH */
+
+        /* Table Styling */
+        table.search-results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+        }
+
+        th.search-results-header, td.search-results-cell {
+            padding: 12px;
+            text-align: left;
+            color: #0a1324;
+            font-family: Arial, sans-serif;
+        }
+
+        th.search-results-header {
+            background-color: #2a2f3b;
+            color: #FFF5EE;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr.search-results-row:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr.search-results-row:hover {
+            background-color: #3a4754;
+            cursor: pointer;
+        }
+
+        /* Error Styling */
+        .search-error-message {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Additional Design for Content */
+        .search-content-container {
+            background-color: #FFF5EE;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        .search-heading {
+            font-family: Bahnschrift, Arial, sans-serif;
+            color: #0a1324;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Overall Body Styling */
+        body.search-body {
+            font-family: Arial, sans-serif;
+            background-color: #0a1324;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container Styling */
+        .search-main-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Form Styling */
+        form.search-form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        input.search-input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input.search-submit-button {
+            background-color: #5999bf;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 20%;
+        }
+
+        input.search-submit-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Navigation container styling */
+.nav-container {
+    width: 100%;
+    background-color: #2a2f3b;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.nav-container nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+}
+
+/* Ensure the search content adjusts below the navigation */
+.search-main-container {
+    margin-top: 20px; /* Add some spacing to separate from navigation */
+    padding: 20px;
+}
+
+
+
+
+
+/* LOGIN */
+
+
+
+
